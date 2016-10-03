@@ -77,7 +77,7 @@ module Lita
           response.reply "#{response.user.name}, cleared game spiel '#{spiel}'"
         end
       end
-      
+
       def game_get(response)
         self_target = !response.match_data[1]
         target = response.match_data[1] || response.user.name
@@ -97,7 +97,7 @@ module Lita
           end
         else
           path = chain.join(' => ')
-          response.reply "#{response.user.name}, no game spiel found. alias chain: #{path}"
+          response.reply "#{response.user.name}, no game spiel found. alias chain: #{path}. Set with '!set game Game - A few Words http://link' or '!alias game OtherUser'"
         end
       end
 
