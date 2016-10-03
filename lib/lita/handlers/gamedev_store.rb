@@ -76,6 +76,7 @@ module Lita
       end
 
       def game_get(response)
+        self_target = !response.match_data[1]
         target = response.match_data[1] || response.user.name
         chain = [response.user.name]
         loop do
@@ -86,7 +87,11 @@ module Lita
         username = mangle_name chain.last
         spiel = redis.get(gamekey(username))
         if spiel
-          response.reply "#{response.user.name}, #{username}'s game spiel: #{spiel}"
+          if self_target
+            response.reply "#{response.user.name}, your game spiel: #{spiel}"
+          else
+            response.reply "#{response.user.name}, #{username}'s game spiel: #{spiel}"
+          end
         else
           path = chain.join(' => ')
           response.reply "#{response.user.name}, no game spiel found. alias chain: #{path}"
