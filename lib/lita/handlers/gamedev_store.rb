@@ -97,7 +97,7 @@ module Lita
           end
         else
           path = chain.join(' => ')
-          response.reply "#{response.user.name}, no game spiel found. alias chain: #{path}. Set with '!set game Game - A few Words http://link' or '!alias game OtherUser'"
+          response.reply "#{response.user.name}, no game spiel found. alias chain: #{path}. Set with '!set game Game - A few words http://link' or '!alias game OtherUser'"
         end
       end
 
