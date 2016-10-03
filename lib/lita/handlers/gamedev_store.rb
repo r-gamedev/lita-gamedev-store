@@ -23,10 +23,13 @@ module Lita
           '!clear game' =>
             'clears the game or alias of the current nick'})
 
-      route(/^!game(?:\s+(.+))?/, :game_get,
+      route(/^!game\s+$/, :game_get,
             help: {
               '!game' =>
                 'gets the game spiel of the calling user',
+
+      route(/^!game\s+(.+)/, :game_get,
+            help: {
               '!game lemtzas' =>
                 'gets the game spiel of lemtzas',
               '!game lemtzas__' =>
@@ -49,7 +52,7 @@ module Lita
         username = mangle_name response.user.name
         useralias = mangle_name response.match_data[1]
         redis.set(aliaskey(username), useralias)
-        response.reply "#{response.user.name}, created alias #{username} => #{useralias}"
+        response.reply "#{response.user.name}, created alias #{username} => useralias"
 
         spiel = redis.get(gamekey(username))
         if spiel
