@@ -26,7 +26,7 @@ module Lita
       route(/^!game\s*$/, :game_get,
             help: {
               '!game' =>
-                'gets the game spiel of the calling user',
+                'gets the game spiel of the calling user'})
 
       route(/^!game\s+(.+)/, :game_get,
             help: {
