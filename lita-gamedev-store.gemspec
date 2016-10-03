@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Lemtzas']
   spec.email         = ['lemtzas@gmail.com']
   spec.description   = 'Data storage commands for #reddit-gamedev'
-  spec.summary       = 'Stores and retrieves data'
+  spec.summary       = 'Stores and retrieves game spiels'
   spec.homepage      = 'http://lemtzas.com'
   spec.license       = 'MIT'
   spec.metadata      = { 'lita_plugin_type' => 'handler' }
