@@ -90,7 +90,7 @@ module Lita
         username = mangle_name chain.last
         spiel = redis.get(gamekey(username))
         if spiel
-          if username == mangle_name(target)
+          if username == mangle_name(response.user.name)
             response.reply "#{response.user.name}, your game spiel: #{spiel}"
           else
             response.reply "#{response.user.name}, #{chain.last}'s game spiel: #{spiel}"
