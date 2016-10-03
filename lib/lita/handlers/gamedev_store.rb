@@ -49,7 +49,7 @@ module Lita
         username = mangle_name response.user.name
         useralias = mangle_name response.match_data[1]
         redis.set(aliaskey(username), useralias)
-        response.reply "#{response.user.name}, created alias #{username} => useralias"
+        response.reply "#{response.user.name}, created alias #{username} => #{useralias}"
 
         spiel = redis.get(gamekey(username))
         if spiel
