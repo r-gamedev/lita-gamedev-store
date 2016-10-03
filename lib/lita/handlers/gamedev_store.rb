@@ -23,7 +23,7 @@ module Lita
           '!clear game' =>
             'clears the game or alias of the current nick'})
 
-      route(/^!game\s+$/, :game_get,
+      route(/^!game\s*$/, :game_get,
             help: {
               '!game' =>
                 'gets the game spiel of the calling user',
