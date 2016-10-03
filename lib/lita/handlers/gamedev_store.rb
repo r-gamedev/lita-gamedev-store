@@ -77,11 +77,11 @@ module Lita
           response.reply "#{response.user.name}, cleared game spiel '#{spiel}'"
         end
       end
-
+      
       def game_get(response)
         self_target = !response.match_data[1]
         target = response.match_data[1] || response.user.name
-        chain = [response.user.name]
+        chain = [target]
         loop do
           useralias = redis.get(aliaskey(chain.last))
           break unless useralias
